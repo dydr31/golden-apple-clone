@@ -1,0 +1,32 @@
+.footer{
+    background-color: black;
+    color: rgb(206, 206, 206);
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem;
+    position: relative;
+    bottom: 0px;
+
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+
+}
+
+.footer li {
+  padding-top: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.footer a {
+    color: rgb(209, 209, 209);
+    text-decoration: none;
+}
+
+.resources{
+    text-align: right;
+    
+}

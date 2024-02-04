@@ -1,0 +1,33 @@
+.black-background{
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    position: absolute;
+}
+
+
+
+.resources-page{
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+
+.resources-page ul {
+    list-style: none;
+    padding: 0;
+}
+
+.resources-page li {
+    padding-bottom: 1rem;;
+}
+
+.resources-page a{
+    text-decoration: none;
+    color: black;
+}

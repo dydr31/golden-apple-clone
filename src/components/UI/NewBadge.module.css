@@ -1,0 +1,27 @@
+
+  .new {
+    /* position: absolute; */
+    background-color: rgb(108, 232, 26);
+    width: 1.8rem;
+    height: 1.8rem;
+    color: white;
+    font-weight: 800;
+    font-stretch: condensed;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .new img {
+    width: 1.3rem;
+
+
+  }
+
+  .new p{
+    z-index: 5;
+    position: absolute;
+    color: black;
+  }
+  

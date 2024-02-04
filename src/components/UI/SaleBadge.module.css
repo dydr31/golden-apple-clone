@@ -1,0 +1,18 @@
+.hide {
+  background-color: black;
+  display: none;
+}
+
+.sale {
+  /* position: absolute; */
+  background-color: rgb(255, 2, 91);
+  width: 1.8rem;
+  height: 1.8rem;
+  color: white;
+  font-weight: 800;
+  font-stretch: condensed;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,72 @@
+.backdrop{
+    background-color: rgb(1,1,1, .2);
+    backdrop-filter: blur(10px);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 300;
+}
+
+.white-background {
+  height: 100vh;
+  width: 55vw;
+  background-color: rgba(255, 255, 255, 1);
+  position: fixed;
+  z-index: 300;
+  position: fixed;
+  right: 0;
+  top:0;
+}
+
+.log-in {
+  z-index: 301;
+  position: absolute;
+  text-align: center;
+  gap: .5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 60%;
+}
+
+.close-icon{
+    width: 1rem;
+    position: absolute;
+    top: 70px;
+    right: 70px;
+    z-index: 301;
+    cursor: pointer;
+}
+
+.log-in input {
+    border: none;
+    border-bottom: 1px rgb(73, 73, 73) solid;
+
+    font-size: 16px;
+}
+
+.log-in form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: .5rem;
+}
+
+/* .log-in form button {
+    border: none;
+    color: white;
+    background-color: black;
+    font-size: 14px;
+    padding: 1rem;
+    cursor: pointer;
+} */
+
+@media (max-width: 600px){
+    .white-background{
+        width: 100vw;
+    }
+    .log-in{
+        width: 80%;
+    }
+}

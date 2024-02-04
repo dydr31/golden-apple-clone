@@ -1,0 +1,132 @@
+.item-menu a:hover{
+  text-decoration: underline;
+}
+
+.item-menu {
+  
+}
+
+.item-menu-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  margin: 3rem;
+  margin-top: 1rem;
+  gap: 3rem;
+}
+
+.nav-text{
+  font-weight: 700;
+  margin-left: 3rem;
+}
+
+.item-menu-content img {
+  width: 100%;
+}
+
+.item-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.grey-text {
+  color: grey;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+.name {
+  font-size: 35px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.price{
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom :0;
+}
+
+.description {
+  line-height: 1.8rem;
+  font-size: calc(12px + .3vw);
+}
+
+.options {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.options li {
+  border: 1px rgb(68, 68, 68) solid;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.selected {
+  color: rgb(100, 34, 34);
+}
+
+.buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.buttons img {
+  height: 1rem;
+  width: 1rem;
+  filter: invert(100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-content button {
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: black;
+  padding: 1rem;
+}
+
+.buttons_add {
+  width: 40%;
+}
+
+.aaa{
+  background-color: rgb(212, 212, 212);
+}
+
+.badges{
+  position: absolute;
+}
+
+@media (max-width: 600px){
+  .item-menu-content{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    margin-right:  1rem;
+    gap: 1rem;
+  }
+  .buttons{
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    width: 100vw;
+    z-index: 100;
+    left: 0;
+    padding: .5rem;
+    display: flex;
+    
+  }
+  .buttons_add {
+    padding: 1rem;
+    width: 81.5%;
+  }
+  .nav-text{
+    margin-left: 1rem;
+  }
+}

@@ -1,0 +1,84 @@
+.sale {
+  position: absolute;
+  background-color: rgb(255, 2, 2);
+  width: 2.3rem;
+  height: 2.3rem;
+  color: white;
+  font-weight: 900;
+  font-stretch: condensed;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-picture {
+  width: 100%;
+  cursor: pointer;
+}
+
+.item {
+  margin-bottom: 4rem;
+}
+.item label {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.name {
+  margin: 0;
+}
+
+.price-section {
+  display: flex;
+}
+
+.price {
+  margin: 0.5rem;
+  margin-left: 0;
+}
+
+.before-price {
+  color: grey;
+  text-decoration: line-through;
+  margin: 0.5rem;
+}
+.title {
+  color: rgb(53, 53, 53);
+  font-size: 16px;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.hide {
+  background-color: black;
+  display: none;
+}
+
+.plus {
+  position: absolute;
+  transform: translate(18vw, -150%);
+}
+
+.heart {
+  position: absolute;
+  transform: translate(18vw);
+}
+
+.badges {
+  position: absolute;
+  display: flex;
+}
+
+@media (max-width: 600px) {
+  .heart {
+    transform: translate(35vw);
+  }
+  .plus {
+    transform: translate(35vw, -150%);
+  }
+}

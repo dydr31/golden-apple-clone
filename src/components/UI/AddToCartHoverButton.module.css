@@ -1,0 +1,24 @@
+.add-to-cart-button img {
+    width: .7rem;
+    height: .7rem;;
+
+    filter:invert(100%)
+
+}
+
+.add-to-cart-button{
+    background-color: black;
+    border: none;
+    border-radius: 50%;
+    padding: .75vw;
+    margin-right: 1rem; 
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-to-cart-button:hover,
+.add-to-cart-button:active {
+    background-color: pink;
+}
