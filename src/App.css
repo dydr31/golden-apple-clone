@@ -1,0 +1,18 @@
+
+.main-nav-bar {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-left: 4rem;
+
+}
+
+.main-nav-bar img {
+  width: 1rem;
+  height: 1rem;
+}
+
+p {
+  padding-left: 0;
+}
+
