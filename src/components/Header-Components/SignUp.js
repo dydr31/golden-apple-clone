@@ -1,18 +1,18 @@
 import classes from "./SignUp.module.css";
-import close from "../pics/close.png";
+import close from "../../pics/close.png";
 import { useDispatch, useSelector } from "react-redux";
-import { headerActions } from "../store";
+import { headerActions } from "../../store";
 
 import { useState } from "react";
 
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../config/firebase";
-import { db } from "../config/firebase";
+import { auth } from "../../config/firebase";
+import { db } from "../../config/firebase";
 import { addDoc, collection } from "firebase/firestore";
 
 import { motion } from "framer-motion";
-
-
+import { CloseIcon } from "./UI/CloseIcon";
+import { Backdrop } from "./UI/Backdrop";
 
 export const SignUp = () => {
   const dispatch = useDispatch();
@@ -33,38 +33,31 @@ export const SignUp = () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       console.log(email, password);
-      addUserToDb()
-
+      addUserToDb();
     } catch (err) {
       console.error(err);
     }
   };
 
-  const isLoggedIn = localStorage.getItem('log-in')
+  const isLoggedIn = localStorage.getItem("log-in");
 
   const usersRef = collection(db, "users");
 
-  const addUserToDb = async() => {
-    try{
-        await addDoc(usersRef, {
-            email: email,
-            cart: [],
-            registrationDate: new Date (),
-        })
+  const addUserToDb = async () => {
+    try {
+      await addDoc(usersRef, {
+        email: email,
+        cart: [],
+        registrationDate: new Date(),
+      });
+    } catch (err) {
+      console.error("error");
     }
-    catch (err){
-        console.error('error')
-    }
-  }
+  };
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className={classes["backdrop"]}
-      />
+      <Backdrop />
       <motion.div
         initial={{ x: 800 }}
         animate={{ x: 0 }}
@@ -72,11 +65,8 @@ export const SignUp = () => {
         transition={{ bounce: 0 }}
         className={classes["white-background"]}
       >
-        <img
-          src={close}
-          className={classes["close-icon"]}
-          onClick={closeForm}
-        />
+        <CloseIcon onClick={closeForm} />
+
         <div className={classes["log-in"]}>
           <h2>Sign Up</h2>
 

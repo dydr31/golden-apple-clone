@@ -1,17 +1,19 @@
 import classes from "./LogIn.module.css";
-import close from "../pics/close.png";
+
+import { CloseIcon } from "./UI/CloseIcon";
 import { useDispatch, useSelector } from "react-redux";
-import { headerActions } from "../store";
+import { headerActions } from "../../store";
 
 import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
-import { auth, googleProvider } from "../config/firebase";
-import { ButtonBlack } from "./UI/ButtonBlack";
+import { auth, googleProvider } from "../../config/firebase";
+
 import { useState } from "react";
 
 import { motion } from "framer-motion";
 import { collection } from "firebase/firestore";
-import { db } from "../config/firebase";
+import { db } from "../../config/firebase";
 import { LogInWithGoogle } from "./LogInWithGoogle";
+import { Backdrop } from "./UI/Backdrop";
 
 export const LogIn = () => {
   const dispatch = useDispatch();
@@ -29,10 +31,10 @@ export const LogIn = () => {
 
   const signIn = async () => {
     try {
-      let response = await signInWithEmailAndPassword(auth, email, password)
-      localStorage.setItem("Log In", true)
-      localStorage.setItem('Email', email)
-      console.log(response)
+      let response = await signInWithEmailAndPassword(auth, email, password);
+      localStorage.setItem("Log In", true);
+      localStorage.setItem("Email", email);
+      console.log(response);
     } catch (err) {
       console.error("error");
     }
@@ -40,13 +42,7 @@ export const LogIn = () => {
 
   return (
     <>
-    
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className={classes["backdrop"]}
-      />
+      <Backdrop />
       <motion.div
         initial={{ x: 800 }}
         animate={{ x: 0 }}
@@ -54,11 +50,7 @@ export const LogIn = () => {
         transition={{ bounce: 0 }}
         className={classes["white-background"]}
       >
-        <img
-          src={close}
-          className={classes["close-icon"]}
-          onClick={closeIconHandler}
-        />
+        <CloseIcon onClick={closeIconHandler} />
         <div className={classes["log-in"]}>
           <h2>Log In</h2>
 
@@ -69,9 +61,7 @@ export const LogIn = () => {
             <ButtonBlack type="submit" text="submit" onClick={signIn}/>
           </form> */}
 
-
-            <LogInWithGoogle/>
-          
+          <LogInWithGoogle />
 
           {/* <p>
             already have an account?{" "}

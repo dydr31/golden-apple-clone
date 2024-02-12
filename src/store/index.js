@@ -3,37 +3,15 @@ import { createSlice } from "@reduxjs/toolkit";
 import cartSlice from "./cartSlice";
 
 const initialState = {
-  theme: "light",
   menu: false,
   catalogue: false,
   logInForm: false,
   signUpForm: false,
-  showItem: false,
-  heart: false,
-  option: "small",
+  // showItem: false,
   cart: false,
   settings: false,
+  likes: false,
 };
-
-const themeSlice = createSlice({
-  name: "theme",
-  initialState,
-  reducers: {
-    theme1(state) {
-      if (state.theme === "light") {
-        state.theme = "dark";
-      } else {
-        state.theme = "light";
-      }
-    },
-    // theme2(state){
-    //     state.theme =['theme2']
-    // },
-    // theme3(state){
-    //     state.theme =['theme3']
-    // }
-  },
-});
 
 const headerSlice = createSlice({
   name: "menu",
@@ -42,8 +20,9 @@ const headerSlice = createSlice({
     menu(state) {
       if (state.menu === false) {
         state.menu = true;
-        state.cart= false;
-        state.settings = false
+        state.cart = false;
+        state.settings = false;
+        state.likes = false;
       } else {
         state.menu = false;
         state.catalogue = false;
@@ -52,7 +31,6 @@ const headerSlice = createSlice({
     catalogue(state) {
       if (state.catalogue === false) {
         state.catalogue = true;
-        
       } else {
         state.catalogue = false;
       }
@@ -62,60 +40,58 @@ const headerSlice = createSlice({
         state.logInForm = true;
         state.menu = false;
         state.cart = false;
-        state.signUpForm = false
+        state.signUpForm = false;
+        state.likes = false;
       } else {
         state.logInForm = false;
       }
     },
-    signUpForm(state){
-      if(state.signUpForm === false){
+    signUpForm(state) {
+      if (state.signUpForm === false) {
         state.signUpForm = true;
         state.menu = false;
         state.cart = false;
-        state.logInForm = false
+        state.logInForm = false;
+        state.likes = false;
       } else {
-        state.signUpForm = false
+        state.signUpForm = false;
       }
     },
-    cart(state){
-      if (state.cart === false){
-        state.cart = true
+    cart(state) {
+      if (state.cart === false) {
+        state.cart = true;
         state.menu = false;
-        state.settings = false
+        state.settings = false;
+        state.likes = false;
       } else {
-        state.cart = false
+        state.cart = false;
       }
     },
-    showItem(state) {
-      if (state.showItem === false) {
-        state.showItem = true;
+    // showItem(state) {
+    //   if (state.showItem === false) {
+    //     state.showItem = true;
+    //   } else {
+    //     state.showItem = false;
+    //   }
+    // },
+    showSettings(state) {
+      if (state.settings === false) {
+        state.settings = true;
+        state.menu = false;
+        state.cart = false;
+        state.likes = false;
       } else {
-        state.showItem = false;
+        state.settings = false;
       }
     },
-    heart(state) {
-      if (state.heart === false) {
-        state.heart = true;
+    likes(state){
+      if (state.likes === false){
+        state.likes = true;
+        state.menu = false;
+        state.settings = false;
+        state.cart = false;
       } else {
-        state.heart = false;
-      }
-    },
-    optionLarge(state) {
-      state.option = "large";
-    },
-    optionMedium(state) {
-      state.option = "medium";
-    },
-    optionSmall(state) {
-      state.option = "small";
-    },
-    showSettings(state){
-      if (state.settings === false){
-        state.settings = true
-        state.menu = false
-        state.cart = false
-      } else {
-        state.settings = false
+        state.likes = false;
       }
     }
   },
@@ -143,14 +119,12 @@ const itemSlice = createSlice({
 
 const store = configureStore({
   reducer: {
-    theme: themeSlice.reducer,
     menu: headerSlice.reducer,
     item: itemSlice.reducer,
     cart: cartSlice.reducer,
   },
 });
 
-export const themeActions = themeSlice.actions;
 export const headerActions = headerSlice.actions;
 export const itemActions = itemSlice.actions;
 export default store;

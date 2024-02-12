@@ -1,12 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import classes from "./Cart.module.css";
-import close from "../pics/close.png";
-import { headerActions } from "../store";
-import { CartItem } from "./UI/CartItem";
-import { ButtonBlack } from "./UI/ButtonBlack";
+import { headerActions } from "../../store";
+import { CartItem } from "../UI/CartItem";
+import { ButtonBlack } from "../UI/ButtonBlack";
 
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect } from "react";
+import { CloseIcon } from "./UI/CloseIcon";
+import { Backdrop } from "./UI/Backdrop";
 
 export const Cart = () => {
   const dispatch = useDispatch();
@@ -21,21 +22,15 @@ export const Cart = () => {
     showMessage = false;
   }
 
-  useEffect(() => {
-    console.log('cart')
-    console.log(cart.items)
-  }, [dispatch, cart])
+  // useEffect(() => {
+  //   // console.log("cart");
+  //   // console.log(cart.items);
+  // }, [dispatch, cart]);
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.3 }}
-        className={classes["backdrop"]}
-        onClick={closeIconHandler}
-      />
+      <Backdrop onClick={closeIconHandler}/>
+
       <motion.div
         initial={{ x: 800 }}
         animate={{ x: 0 }}
@@ -43,11 +38,7 @@ export const Cart = () => {
         transition={{ bounce: 0 }}
         className={classes["background"]}
       >
-        <img
-          src={close}
-          className={classes["close-icon"]}
-          onClick={closeIconHandler}
-        />
+        <CloseIcon onClick={closeIconHandler} />
 
         {showMessage && (
           <h2 className={classes["message"]}>There's nothing in here yet...</h2>

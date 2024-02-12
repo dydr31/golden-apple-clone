@@ -7,20 +7,21 @@ import { useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { headerActions } from "../store";
-import { cartActions } from "../store/cartSlice";
 
-import { LogIn } from "./LogIn";
-import { Cart } from "./Cart";
+
+import { LogIn } from "./Header-Components/LogIn";
+import { Cart } from "./Header-Components/Cart";
 import { Link } from "react-router-dom";
-import { Menu } from "./Menu";
+import { Menu } from "./Header-Components/Menu";
 import { Outlet } from "react-router-dom";
-import { SignUp } from "./SignUp";
+import { SignUp } from "./Header-Components/SignUp";
 import { CartBadge } from "./UI/CartBadge";
 
 import { AnimatePresence } from "framer-motion";
 import { Banner } from "./Banner";
-import { AccountSettings } from "./AccountSettings";
+import { AccountSettings } from "./Header-Components/AccountSettings";
 import { fetchCartData } from "../store/cart-actions";
+import { LikesMenu } from "./Header-Components/LikesMenu";
 
 function Header() {
   const header = useSelector((state) => state.menu);
@@ -45,6 +46,10 @@ function Header() {
     dispatch(headerActions.cart());
   };
 
+  const heartIconHandler = () => {
+    dispatch(headerActions.likes())
+  }
+
   useEffect(() => {
     dispatch(fetchCartData());
   }, [dispatch]);
@@ -62,7 +67,7 @@ function Header() {
           </h1>
 
           <div className={classes["tabs"]}>
-            <img src={heart} className={classes["hide-on-mobile"]} />
+            <img src={heart} className={classes["hide-on-mobile"]} onClick={heartIconHandler} />
             <img
               src={user}
               onClick={userIconHandler}
@@ -82,6 +87,7 @@ function Header() {
         {isLoggedIn && header.settings && <AccountSettings />}
         {header.cart && <Cart />}
         {header.menu && <Menu />}{" "}
+        {header.likes && <LikesMenu/>}
       </AnimatePresence>
 
       <Outlet />

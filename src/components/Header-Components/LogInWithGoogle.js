@@ -1,14 +1,14 @@
-import { ButtonBlack } from "./UI/ButtonBlack";
+import { ButtonBlack } from "../UI/ButtonBlack";
 
-import { googleProvider } from "../config/firebase";
-import { auth } from "../config/firebase";
+import { googleProvider } from "../../config/firebase";
+import { auth } from "../../config/firebase";
 import { signInWithPopup } from "firebase/auth";
-import { db } from "../config/firebase";
+import { db } from "../../config/firebase";
 import { addDoc, collection, getDocs } from "firebase/firestore";
 
 import { useDispatch, useSelector } from "react-redux";
-import { headerActions } from "../store";
-import { cartActions } from "../store/cartSlice";
+import { headerActions } from "../../store";
+import { cartActions } from "../../store/cartSlice";
 
 export const LogInWithGoogle = (props) => {
   const dispatch = useDispatch();

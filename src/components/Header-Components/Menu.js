@@ -1,16 +1,14 @@
 import classes from "./Menu.module.css";
-import arrow from "../pics/right-arrow.png";
-import whatsapp from "../pics/whatsapp.png";
-import pin from "../pics/maps-and-flags.png";
+import arrow from "../../pics/right-arrow.png";
+import whatsapp from "../../pics/whatsapp.png";
+import pin from "../../pics/maps-and-flags.png";
 
 import { useSelector, useDispatch } from "react-redux";
-import { headerActions } from "../store";
+import { headerActions } from "../../store";
 import { Link } from "react-router-dom";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { cartActions } from "../store/cartSlice";
-import { useEffect } from "react";
-import { useState } from "react";
+import { Backdrop } from "./UI/Backdrop";
 
 export const Menu = (props) => {
   const header = useSelector((state) => state.menu);
@@ -43,14 +41,7 @@ export const Menu = (props) => {
   return (
     <>
       {console.log(showSettings)}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.3 }}
-        className={classes["backdrop"]}
-        onClick={menuHandler}
-      ></motion.div>
+      <Backdrop onClick={menuHandler}/>
       <motion.nav
         className={classes["menu"]}
         initial={{ x: -500 }}
