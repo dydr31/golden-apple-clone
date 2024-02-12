@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { headerActions } from "../../store";
 import { CloseIcon } from "./UI/CloseIcon";
 import { Backdrop } from "./UI/Backdrop";
+import { Background } from "./UI/Background";
 
 export const LikesMenu = () => {
   const dispatch = useDispatch();
@@ -14,22 +15,13 @@ export const LikesMenu = () => {
   return (
     <>
       <Backdrop onClick={closeIconHandler} />
-      <motion.div
-        initial={{ x: 800 }}
-        animate={{ x: 0 }}
-        exit={{ x: 800 }}
-        transition={{ bounce: 0 }}
-        className={classes["background"]}
-      >
+
+      <Background>
         <CloseIcon onClick={closeIconHandler} />
         <div>
-          <ul>
-            
-          </ul>
-
+          <ul></ul>
         </div>
-
-      </motion.div>
+      </Background>
     </>
   );
 };

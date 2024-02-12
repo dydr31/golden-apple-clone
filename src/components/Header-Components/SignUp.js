@@ -13,6 +13,7 @@ import { addDoc, collection } from "firebase/firestore";
 import { motion } from "framer-motion";
 import { CloseIcon } from "./UI/CloseIcon";
 import { Backdrop } from "./UI/Backdrop";
+import { Background } from "./UI/Background";
 
 export const SignUp = () => {
   const dispatch = useDispatch();
@@ -58,13 +59,7 @@ export const SignUp = () => {
   return (
     <>
       <Backdrop />
-      <motion.div
-        initial={{ x: 800 }}
-        animate={{ x: 0 }}
-        exit={{ x: 800 }}
-        transition={{ bounce: 0 }}
-        className={classes["white-background"]}
-      >
+      <Background>
         <CloseIcon onClick={closeForm} />
 
         <div className={classes["log-in"]}>
@@ -97,7 +92,7 @@ export const SignUp = () => {
             <strong onClick={openLogInForm}>sign in </strong>
           </p>
         </div>
-      </motion.div>
+      </Background>
     </>
   );
 };

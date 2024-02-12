@@ -8,6 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect } from "react";
 import { CloseIcon } from "./UI/CloseIcon";
 import { Backdrop } from "./UI/Backdrop";
+import { Background } from "./UI/Background";
 
 export const Cart = () => {
   const dispatch = useDispatch();
@@ -29,15 +30,10 @@ export const Cart = () => {
 
   return (
     <>
-      <Backdrop onClick={closeIconHandler}/>
+      <Backdrop onClick={closeIconHandler} />
 
-      <motion.div
-        initial={{ x: 800 }}
-        animate={{ x: 0 }}
-        exit={{ x: 800 }}
-        transition={{ bounce: 0 }}
-        className={classes["background"]}
-      >
+      <Background>
+
         <CloseIcon onClick={closeIconHandler} />
 
         {showMessage && (
@@ -76,7 +72,8 @@ export const Cart = () => {
             </div>
           </>
         )}
-      </motion.div>
+        
+      </Background>
     </>
   );
 };

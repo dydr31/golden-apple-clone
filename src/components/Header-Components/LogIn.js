@@ -14,6 +14,7 @@ import { collection } from "firebase/firestore";
 import { db } from "../../config/firebase";
 import { LogInWithGoogle } from "./LogInWithGoogle";
 import { Backdrop } from "./UI/Backdrop";
+import { Background } from "./UI/Background";
 
 export const LogIn = () => {
   const dispatch = useDispatch();
@@ -43,13 +44,7 @@ export const LogIn = () => {
   return (
     <>
       <Backdrop />
-      <motion.div
-        initial={{ x: 800 }}
-        animate={{ x: 0 }}
-        exit={{ x: 800 }}
-        transition={{ bounce: 0 }}
-        className={classes["white-background"]}
-      >
+      <Background>
         <CloseIcon onClick={closeIconHandler} />
         <div className={classes["log-in"]}>
           <h2>Log In</h2>
@@ -68,7 +63,7 @@ export const LogIn = () => {
             <strong onClick={openSignUpForm}>sign up </strong>
           </p> */}
         </div>
-      </motion.div>
+      </Background>
     </>
   );
 };

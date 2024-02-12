@@ -2,14 +2,14 @@ import classes from "./AccountSettings.module.css";
 
 import { auth } from "../../config/firebase";
 import { signOut } from "firebase/auth";
-import { motion } from "framer-motion";
 import { ButtonBlack } from "../UI/ButtonBlack";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { headerActions } from "../../store";
 import { useState } from "react";
 import { cartActions } from "../../store/cartSlice";
 import { CloseIcon } from "./UI/CloseIcon";
 import { Backdrop } from "./UI/Backdrop";
+import { Background } from "./UI/Background";
 
 export const AccountSettings = () => {
   const dispatch = useDispatch();
@@ -40,14 +40,8 @@ export const AccountSettings = () => {
 
   return (
     <>
-      <Backdrop onClick={closeHandler}/>
-      <motion.div
-        className={classes["account-settings"]}
-        initial={{ x: 800 }}
-        animate={{ x: 0 }}
-        exit={{ x: 800 }}
-        transition={{ bounce: 0 }}
-      >
+      <Backdrop onClick={closeHandler} />
+      <Background>
         <CloseIcon onClick={closeHandler} />
         <div className={classes["settings-content"]}>
           {!showLogOutMessage && (
@@ -58,7 +52,7 @@ export const AccountSettings = () => {
           )}
           {showLogOutMessage && <h2>Successfully logged out</h2>}
         </div>
-      </motion.div>
+      </Background>
     </>
   );
 };
