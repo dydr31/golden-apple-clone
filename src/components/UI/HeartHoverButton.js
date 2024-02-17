@@ -4,12 +4,19 @@ import classes from "./HeartHoverButton.module.css";
 import { useState } from "react";
 
 export const HeartHoverButton = (props) => {
-  const [isHeartFilled, setIsHeartFilled] = useState(props.wasLiked);
-  const mouseHandler = () => {
-    setIsHeartFilled(!isHeartFilled);
+
+  const [onMouseHover, setIsOnMouseHover] = useState(false)
+
+  const onMouseLeaveHandler = () => {
+    setIsOnMouseHover(false)
   };
 
-  const [isHeartClicked, setIsHeartClicked] = useState(false);
+  const onMouseEnterHandler = () => {
+    setIsOnMouseHover(true)
+  }
+
+  const [isHeartClicked, setIsHeartClicked] = useState(props.wasLiked);
+  
   const clickHandler = () => {
     props.on(!isHeartClicked)
     setIsHeartClicked(!isHeartClicked);
@@ -22,10 +29,10 @@ export const HeartHoverButton = (props) => {
 
     >
       <img
-        src={`${(!isHeartFilled && !isHeartClicked) ? heart : heartFilled}`}
+        src={`${((!onMouseHover && !isHeartClicked) ) ? heart : heartFilled}`}
         onClick={clickHandler}
-        onMouseEnter={mouseHandler}
-        onMouseLeave={mouseHandler}
+        onMouseEnter={onMouseEnterHandler}
+        onMouseLeave={onMouseLeaveHandler}
       />
     </button>
   );
