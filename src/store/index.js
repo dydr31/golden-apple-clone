@@ -11,6 +11,7 @@ const initialState = {
   cart: false,
   settings: false,
   likes: false,
+  disableScrolling: false,
 };
 
 const headerSlice = createSlice({
@@ -23,9 +24,11 @@ const headerSlice = createSlice({
         state.cart = false;
         state.settings = false;
         state.likes = false;
+        state.disableScrolling = true;
       } else {
         state.menu = false;
         state.catalogue = false;
+        state.disableScrolling = false;
       }
     },
     catalogue(state) {
@@ -42,8 +45,10 @@ const headerSlice = createSlice({
         state.cart = false;
         state.signUpForm = false;
         state.likes = false;
+        state.disableScrolling = true;
       } else {
         state.logInForm = false;
+        state.disableScrolling = false;
       }
     },
     signUpForm(state) {
@@ -53,8 +58,10 @@ const headerSlice = createSlice({
         state.cart = false;
         state.logInForm = false;
         state.likes = false;
+        state.disableScrolling = true;
       } else {
         state.signUpForm = false;
+        state.disableScrolling = false;
       }
     },
     cart(state) {
@@ -63,8 +70,10 @@ const headerSlice = createSlice({
         state.menu = false;
         state.settings = false;
         state.likes = false;
+        state.disableScrolling = true;
       } else {
         state.cart = false;
+        state.disableScrolling = false;
       }
     },
     // showItem(state) {
@@ -80,8 +89,10 @@ const headerSlice = createSlice({
         state.menu = false;
         state.cart = false;
         state.likes = false;
+        state.disableScrolling = true;
       } else {
         state.settings = false;
+        state.disableScrolling = false;
       }
     },
     likes(state){
@@ -90,8 +101,10 @@ const headerSlice = createSlice({
         state.menu = false;
         state.settings = false;
         state.cart = false;
+        state.disableScrolling = true;
       } else {
         state.likes = false;
+        state.disableScrolling = false;
       }
     }
   },

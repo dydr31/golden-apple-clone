@@ -25,6 +25,8 @@ export const Catalogue = () => {
     }
   };
 
+
+
   useEffect(() => {
     getProductList();
   }, []);

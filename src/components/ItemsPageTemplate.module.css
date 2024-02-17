@@ -1,37 +1,39 @@
-.catalogue{
-    
+.catalogue {
 }
 
-.catalogue ul{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 2rem;
-    list-style: none;
-    margin-right: 3rem;
-    margin-left: 3rem;
-    padding: 0;
+.catalogue ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 2rem;
+  list-style: none;
+  margin-right: 3rem;
+  margin-left: 3rem;
+  padding: 0;
 }
 
-.catalogue_header{
-    font-size: 16px;
-    margin-left: 3rem;
-    text-align: left;
+.catalogue_header {
+  font-size: 16px;
+  margin-left: 3rem;
+  text-align: left;
 }
 
-@media(max-width: 800px){
-    .catalogue ul {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
+.disableScrolling {
+  overflow: hidden;
 }
 
-@media (max-width: 600px){
-    .catalogue ul {
-        grid-template-columns: 1fr 1fr;
-        margin-right: 1rem;
-        margin-left: 1rem;
-    }
-    .catalogue h3{
-        margin-left: 1rem;
-    }
+@media (max-width: 800px) {
+  .catalogue ul {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
+@media (max-width: 600px) {
+  .catalogue ul {
+    grid-template-columns: 1fr 1fr;
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+  .catalogue h3 {
+    margin-left: 1rem;
+  }
+}
