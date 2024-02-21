@@ -7,7 +7,6 @@ const initialState = {
   catalogue: false,
   logInForm: false,
   signUpForm: false,
-  // showItem: false,
   cart: false,
   settings: false,
   likes: false,
@@ -76,13 +75,6 @@ const headerSlice = createSlice({
         state.disableScrolling = false;
       }
     },
-    // showItem(state) {
-    //   if (state.showItem === false) {
-    //     state.showItem = true;
-    //   } else {
-    //     state.showItem = false;
-    //   }
-    // },
     showSettings(state) {
       if (state.settings === false) {
         state.settings = true;
@@ -110,34 +102,14 @@ const headerSlice = createSlice({
   },
 });
 
-const itemSlice = createSlice({
-  name: "item",
-  initialState,
-  reducers: {
-    optionLarge(state) {
-      if (state !== "large") {
-        state.option = "large";
-      } else {
-        state.option = "aaa";
-      }
-    },
-    optionMedium(state) {
-      state.option = "medium";
-    },
-    optionSmall(state) {
-      state.option = "small";
-    },
-  },
-});
+
 
 const store = configureStore({
   reducer: {
     menu: headerSlice.reducer,
-    item: itemSlice.reducer,
     cart: cartSlice.reducer,
   },
 });
 
 export const headerActions = headerSlice.actions;
-export const itemActions = itemSlice.actions;
 export default store;

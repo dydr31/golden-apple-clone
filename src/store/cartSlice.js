@@ -59,6 +59,7 @@ const cartSlice = createSlice({
       state.total = 0;
       state.quantity = 0;
       state.uid = "";
+      
     },
     replaceCart(state, action) {
       state.quantity = action.payload.quantity;
