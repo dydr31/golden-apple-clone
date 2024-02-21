@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import classes from "./Cart.module.css";
 import { headerActions } from "../../store";
-import { CartItem } from "../UI/CartItem";
+import { CartItem } from "./CartItem";
 import { ButtonBlack } from "../UI/ButtonBlack";
 
 import { AnimatePresence, motion } from "framer-motion";
@@ -55,6 +55,7 @@ export const Cart = () => {
                   <CartItem
                     key={x.id}
                     id={x.id}
+                    title={x.title}
                     name={x.name}
                     price={x.price}
                     sale={x.sale}

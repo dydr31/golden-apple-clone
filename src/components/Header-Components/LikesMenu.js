@@ -10,7 +10,7 @@ import { db } from "../../config/firebase";
 import { getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Item } from "../Item";
-import { CartItem } from "../UI/CartItem";
+import { CartItem } from "./CartItem";
 
 export const LikesMenu = () => {
   const dispatch = useDispatch();

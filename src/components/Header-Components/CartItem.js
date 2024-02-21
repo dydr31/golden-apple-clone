@@ -1,4 +1,4 @@
-import img from "../../pics/candle2.jpg";
+import img from "../../pics/candle.jpg";
 import close from "../../pics/close.png";
 import classes from "./CartItem.module.css";
 import { useEffect, useState } from "react";
@@ -47,17 +47,18 @@ export const CartItem = (props) => {
       )}
       <img src={img} className={classes["img"]} />
       <div className={classes["cart-info"]}>
-        <div className={classes["cart-item__main"]}>
-          <p className={classes["cart-item__main__name"]}>{props.name}</p>
-
-          <p className={classes["cart-item__main__amount"]}>/ {props.amount}</p>
+        <div className={classes["cart-info-main"]}>
+          <p className={classes["cart-item__main__title"]}>{props.title}</p>
+          <p className={classes["cart-item__main__name"]}>{props.name.toUpperCase()}</p>
+          {/* <p className={classes["cart-item__main__amount"]}>× {props.amount}</p> */}
         </div>
 
-        <div className={classes["cart-item__main__price"]}>
-          <p>${total}</p>
+        <div className={classes["cart-info-main-price"]}>
+          
           {showOldPrice && (
-            <p className={classes["cart-item__old-price"]}>${oldPrice}</p>
+            <p className={classes["cart-info-old-price"]}>${oldPrice}</p>
           )}
+          <p>${total}</p>
         </div>
       </div>
     </li>

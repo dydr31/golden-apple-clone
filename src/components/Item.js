@@ -48,6 +48,7 @@ export const Item = (props) => {
         price: props.price,
         sale: props.sale,
         name: props.name,
+        title: props.title,
       })
     );
   };
