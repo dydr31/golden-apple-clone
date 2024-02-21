@@ -8,7 +8,6 @@ export const ItemsPageTemplate = (props) => {
 
   return (
     <>
-    {console.log(disableScrolling)}
       <main className={`${classes["catalogue"]} ${disableScrolling ? classes['disableScrolling'] : ''}`}>
         <h3 className={classes["catalogue_header"]}>
           {props.text}

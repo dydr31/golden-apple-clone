@@ -4,8 +4,6 @@ import { headerActions } from "../../store";
 import { CartItem } from "./CartItem";
 import { ButtonBlack } from "../UI/ButtonBlack";
 
-import { AnimatePresence, motion } from "framer-motion";
-import { useEffect } from "react";
 import { CloseIcon } from "./UI/CloseIcon";
 import { Backdrop } from "./UI/Backdrop";
 import { Background } from "./UI/Background";
@@ -22,11 +20,6 @@ export const Cart = () => {
   if (cart.quantity != 0) {
     showMessage = false;
   }
-
-  // useEffect(() => {
-  //   // console.log("cart");
-  //   // console.log(cart.items);
-  // }, [dispatch, cart]);
 
   return (
     <>

@@ -69,6 +69,8 @@ const headerSlice = createSlice({
         state.menu = false;
         state.settings = false;
         state.likes = false;
+        state.logInForm = false;
+        state.signUpForm = false;
         state.disableScrolling = true;
       } else {
         state.cart = false;

@@ -8,7 +8,6 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { headerActions } from "../store";
 
-
 import { LogIn } from "./Header-Components/LogIn";
 import { Cart } from "./Header-Components/Cart";
 import { Link } from "react-router-dom";
@@ -47,11 +46,11 @@ function Header() {
   };
 
   const heartIconHandler = () => {
-    dispatch(headerActions.likes())
-  }
+    dispatch(headerActions.likes());
+  };
 
   useEffect(() => {
-    dispatch(fetchCartData());
+    if(isLoggedIn === true){dispatch(fetchCartData());}
   }, [dispatch]);
 
   return (
@@ -67,7 +66,11 @@ function Header() {
           </h1>
 
           <div className={classes["tabs"]}>
-            <img src={heart} className={classes["hide-on-mobile"]} onClick={heartIconHandler} />
+            <img
+              src={heart}
+              className={classes["hide-on-mobile"]}
+              onClick={heartIconHandler}
+            />
             <img
               src={user}
               onClick={userIconHandler}
@@ -86,8 +89,7 @@ function Header() {
         {!isLoggedIn && header.signUpForm && <SignUp />}
         {isLoggedIn && header.settings && <AccountSettings />}
         {header.cart && <Cart />}
-        {header.menu && <Menu />}{" "}
-        {header.likes && <LikesMenu/>}
+        {header.menu && <Menu />} {header.likes && <LikesMenu />}
       </AnimatePresence>
 
       <Outlet />

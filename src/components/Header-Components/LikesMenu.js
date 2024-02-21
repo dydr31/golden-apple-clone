@@ -67,16 +67,18 @@ export const LikesMenu = () => {
     getProductList()
   }, [])
 
+  let showMessage = false
+  if(arr.length === 0){
+    showMessage = true
+  }
+
 
   return (
     <>
-      {console.log(arr)}
-
       <Backdrop onClick={closeIconHandler} />
-
       <Background>
         <CloseIcon onClick={closeIconHandler} />
-        <div>
+        {!showMessage && <div>
           <h2 className={classes['likes-header']}>You liked</h2>
           <ul className={classes['likes-ul']}>
           {arr.map((x) => (
@@ -91,7 +93,8 @@ export const LikesMenu = () => {
           />
         ))}
           </ul>
-        </div>
+        </div>}
+        {showMessage && <h2 className={classes['message']}>You have not liked anything yet</h2>}
       </Background>
     </>
   );

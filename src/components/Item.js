@@ -33,9 +33,10 @@ export const Item = (props) => {
     setShowHoverButton(!showHoverButton);
   };
 
-  useEffect(() => {
-    sendCartData(cart);
+  //HERE
 
+  useEffect(() => {
+   if(localStorage.getItem('Log In' === true)){ sendCartData(cart);}
   }, [cart]);
 
   let name = props.name;
@@ -54,10 +55,8 @@ export const Item = (props) => {
   };
 
   const heartHandler = (data) => {
-    console.log(data)
-    if(data === true){
 
-    
+    if(data === true){
     dispatch(cartActions.addToLikes(props.id))}
     else {
       dispatch(cartActions.removeFromLikes(props.id))

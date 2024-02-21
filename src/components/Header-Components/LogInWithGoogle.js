@@ -87,7 +87,6 @@ export const LogInWithGoogle = (props) => {
 
   return (
     <>
-      {console.log(cart)}
       <ButtonBlack onClick={signInWithGoogle} text="log in with Google" />
     </>
   );

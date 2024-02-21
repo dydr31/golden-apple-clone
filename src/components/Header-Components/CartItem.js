@@ -47,10 +47,11 @@ export const CartItem = (props) => {
   };
 
   useEffect(() => {
-    if (localStorage.getItem("uid") != undefined) {
+    if (localStorage.getItem("Log In") === true) {
       sendCartData(cart);
     }
   }, [cart, dispatch]);
+
   return (
     <li
       className={classes["cart-item"]}

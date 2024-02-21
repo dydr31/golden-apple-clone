@@ -40,7 +40,6 @@ export const Menu = (props) => {
 
   return (
     <>
-      {console.log(showSettings)}
       <Backdrop onClick={menuHandler}/>
       <motion.nav
         className={classes["menu"]}
