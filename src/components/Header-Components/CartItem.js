@@ -47,9 +47,9 @@ export const CartItem = (props) => {
   };
 
   useEffect(() => {
-    if (localStorage.getItem("Log In") === true) {
+    //if (localStorage.getItem("Log In") === true) {
       sendCartData(cart);
-    }
+    // }
   }, [cart, dispatch]);
 
   return (

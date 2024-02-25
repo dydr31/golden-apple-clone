@@ -17,7 +17,7 @@ const headerSlice = createSlice({
   name: "menu",
   initialState,
   reducers: {
-    menu(state) {
+    header(state) {
       if (state.menu === false) {
         state.menu = true;
         state.cart = false;
@@ -95,6 +95,8 @@ const headerSlice = createSlice({
         state.menu = false;
         state.settings = false;
         state.cart = false;
+        state.logInForm = false;
+        state.signUpForm = false;
         state.disableScrolling = true;
       } else {
         state.likes = false;

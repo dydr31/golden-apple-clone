@@ -1,17 +1,22 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { getAuth, GoogleAuthProvider } from 'firebase/auth';
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAKFNOWH3H6o-2E5uTger454yfbMfaiY78",
-  authDomain: "shop-project-ee1c7.firebaseapp.com",
-  projectId: "shop-project-ee1c7",
-  storageBucket: "shop-project-ee1c7.appspot.com",
-  messagingSenderId: "1070676172757",
-  appId: "1:1070676172757:web:9b98dfe03adf57c891e75c"
+  apiKey: "AIzaSyDPX9pohejt1NIt05QNGvCj12Ddiy2v2F4",
+
+  authDomain: "candle-shop-ab739.firebaseapp.com",
+
+  projectId: "candle-shop-ab739",
+
+  storageBucket: "candle-shop-ab739.appspot.com",
+
+  messagingSenderId: "862755094302",
+
+  appId: "1:862755094302:web:38513f6c0d5a7fbf89d30f",
 };
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
-export const db = getFirestore(app)
+export const db = getFirestore(app);

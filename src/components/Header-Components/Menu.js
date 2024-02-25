@@ -14,7 +14,6 @@ export const Menu = (props) => {
   const header = useSelector((state) => state.menu);
   const dispatch = useDispatch();
 
-  // const [showSettings, setShowSettings] = useState(false)
   let showSettings = false;
   if (localStorage.getItem("Log In") == 'true') {
     
@@ -23,7 +22,7 @@ export const Menu = (props) => {
   
 
   const menuHandler = () => {
-    dispatch(headerActions.menu());
+    dispatch(headerActions.header());
   };
 
   const catalogueHandler = () => {

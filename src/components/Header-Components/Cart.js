@@ -24,9 +24,7 @@ export const Cart = () => {
   return (
     <>
       <Backdrop onClick={closeIconHandler} />
-
       <Background>
-
         <CloseIcon onClick={closeIconHandler} />
 
         {showMessage && (

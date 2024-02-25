@@ -28,12 +28,12 @@ function Header() {
   const dispatch = useDispatch();
 
   let isLoggedIn = localStorage.getItem("Log In");
-  if (isLoggedIn != "true") {
+  if (isLoggedIn !== "true") {
     isLoggedIn = false;
   }
 
   const menuHandler = () => {
-    dispatch(headerActions.menu());
+    dispatch(headerActions.header());
   };
 
   const userIconHandler = () => {
@@ -50,7 +50,9 @@ function Header() {
   };
 
   useEffect(() => {
-    if(isLoggedIn === true){dispatch(fetchCartData());}
+    //if (isLoggedIn === true) {
+      dispatch(fetchCartData());
+   // }
   }, [dispatch]);
 
   return (
@@ -58,7 +60,7 @@ function Header() {
       <header>
         <div className={classes["header-tabs"]}>
           <div>
-            <img src={menuImg} onClick={menuHandler} />
+            <img src={menuImg} onClick={menuHandler} alt='Menu'/>
           </div>
 
           <h1 className={classes["logo"]}>
@@ -68,17 +70,19 @@ function Header() {
           <div className={classes["tabs"]}>
             <img
               src={heart}
+              alt='Likes'
               className={classes["hide-on-mobile"]}
               onClick={heartIconHandler}
             />
             <img
               src={user}
+              alt='User'
               onClick={userIconHandler}
               className={classes["hide-on-mobile"]}
             />
             <div>
               <CartBadge number={cart.quantity} />
-              <img src={cartIcon} onClick={cartIconHandler} />
+              <img src={cartIcon} alt='cart' onClick={cartIconHandler} />
             </div>
           </div>
         </div>
