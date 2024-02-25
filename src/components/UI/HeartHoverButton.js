@@ -30,6 +30,7 @@ export const HeartHoverButton = (props) => {
     >
       <img
         src={`${((!onMouseHover && !isHeartClicked) ) ? heart : heartFilled}`}
+        alt='Like'
         onClick={clickHandler}
         onMouseEnter={onMouseEnterHandler}
         onMouseLeave={onMouseLeaveHandler}

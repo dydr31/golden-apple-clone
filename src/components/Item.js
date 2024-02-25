@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { headerActions } from "../store";
 import { Link } from "react-router-dom";
-import { SaleBadge } from "./UI/SaleBadge";
+import { SaleBadge } from "./UI/Item-Badges/SaleBadge";
 import { AddToCartButton } from "./UI/AddToCartHoverButton";
 import { cartActions } from "../store/cartSlice";
 import { sendCartData, sendLikesData } from "../store/cart-actions";
 import { HeartHoverButton } from "./UI/HeartHoverButton";
-import { NewBadge } from "./UI/NewBadge";
+import { NewBadge } from "./UI/Item-Badges/NewBadge";
 
 export const Item = (props) => {
   const dispatch = useDispatch();

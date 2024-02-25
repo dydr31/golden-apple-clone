@@ -3,7 +3,6 @@ import pic from "../pics/candle2.jpg";
 import heart from "../pics/heart.png";
 import heartBlack from "../pics/heart(1).png";
 import { useDispatch, useSelector } from "react-redux";
-import { headerActions } from "../store";
 import { Footer } from "../components/Footer";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
@@ -11,7 +10,7 @@ import { useParams } from "react-router-dom";
 import { db } from "../config/firebase";
 import { getDoc, doc } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { SaleBadge } from "../components/UI/SaleBadge";
+import { SaleBadge } from "../components/UI/Item-Badges/SaleBadge";
 import { cartActions } from "../store/cartSlice";
 
 export const ItemMenu = () => {
