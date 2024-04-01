@@ -3,8 +3,9 @@ import { db } from "../config/firebase";
 import { cartActions } from "./cartSlice";
 
 
-const userRef = doc(db, "users", localStorage.getItem("uid"));
+
 export const sendCartData = async (cart) => {
+  const userRef = doc(db, "users", localStorage.getItem("uid"));
 
   try {
     await updateDoc(userRef, { cart: cart });
@@ -15,6 +16,7 @@ export const sendCartData = async (cart) => {
 
 
 export const fetchCartData = () => {
+  const userRef = doc(db, "users", localStorage.getItem("uid"));
   
   return async (dispatch) => {
     const fetchData = async () => {
@@ -45,6 +47,7 @@ export const fetchCartData = () => {
 };
 
 export const sendLikesData = async(likes) => {
+  const userRef = doc(db, "users", localStorage.getItem("uid"));
   try {
     await updateDoc(userRef, {likes: likes});
   } catch (err){

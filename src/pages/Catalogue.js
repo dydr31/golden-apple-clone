@@ -1,10 +1,10 @@
 import { Footer } from "../components/Footer";
-import { Item } from "../components/Item";
+import { Item } from "../components/item/Item";
 
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../config/firebase";
-import { ItemsPageTemplate } from "../components/ItemsPageTemplate";
+import { ItemsPageTemplate } from "../components/item/ItemsPageTemplate";
 
 export const Catalogue = () => {
   const [list, setList] = useState([]);

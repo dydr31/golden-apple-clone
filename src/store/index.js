@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
 import cartSlice from "./cartSlice";
+import loginSlice from "./loginSlice";
 
 const initialState = {
   menu: false,
@@ -112,6 +113,7 @@ const store = configureStore({
   reducer: {
     menu: headerSlice.reducer,
     cart: cartSlice.reducer,
+    login: loginSlice.reducer,
   },
 });
 

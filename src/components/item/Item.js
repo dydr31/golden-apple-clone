@@ -1,22 +1,22 @@
 import classes from "./Item.module.css";
-import candle from "../pics/candle.jpg";
+import candle from "../../pics/candle.jpg";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { headerActions } from "../store";
+import { headerActions } from "../../store";
 import { Link } from "react-router-dom";
-import { SaleBadge } from "./UI/Item-Badges/SaleBadge";
-import { AddToCartButton } from "./UI/AddToCartHoverButton";
-import { cartActions } from "../store/cartSlice";
-import { sendCartData, sendLikesData } from "../store/cart-actions";
-import { HeartHoverButton } from "./UI/HeartHoverButton";
-import { NewBadge } from "./UI/Item-Badges/NewBadge";
+import { SaleBadge } from "../UI/Item-Badges/SaleBadge";
+import { AddToCartButton } from "../UI/AddToCartHoverButton";
+import { cartActions } from "../../store/cartSlice";
+import { sendCartData, sendLikesData } from "../../store/cart-actions";
+import { HeartHoverButton } from "../UI/HeartHoverButton";
+import { NewBadge } from "../UI/Item-Badges/NewBadge";
 
 export const Item = (props) => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
 
   const itemHandler = () => {
-    dispatch(headerActions.showItem());
+    // dispatch(headerActions.showItem());
   };
 
   let hide = false;
@@ -36,11 +36,13 @@ export const Item = (props) => {
   //HERE
 
   useEffect(() => {
-   if(localStorage.getItem('Log In' === true)){ sendCartData(cart);}
+    if (localStorage.getItem("Log In" === true)) {
+      sendCartData(cart);
+    }
   }, [cart]);
 
   let name = props.name;
-  name = name.toUpperCase()
+  name = name.toUpperCase();
 
   const addItemToCart = () => {
     dispatch(
@@ -55,23 +57,18 @@ export const Item = (props) => {
   };
 
   const heartHandler = (data) => {
-
-    if(data === true){
-    dispatch(cartActions.addToLikes(props.id))}
-    else {
-      dispatch(cartActions.removeFromLikes(props.id))
+    if (data === true) {
+      dispatch(cartActions.addToLikes(props.id));
+    } else {
+      dispatch(cartActions.removeFromLikes(props.id));
     }
+  };
+
+  let wasLiked = false;
+  let a = cart.likes.find((x) => x === props.id);
+  if (a != undefined) {
+    wasLiked = true;
   }
-
-
-
-  let wasLiked = false
-  let a = cart.likes.find(x => x === props.id)
-  if(a != undefined){
-    wasLiked = true
-  }
-  
-
 
   return (
     <>
@@ -80,16 +77,14 @@ export const Item = (props) => {
         onMouseEnter={hoverHandler}
         onMouseLeave={hoverHandler}
       >
-        
-        <div className={classes['heart']}><HeartHoverButton on={heartHandler}
-        wasLiked={wasLiked}/></div>
-        
-        <div className={classes['badges']}>
-        <NewBadge new={props.new}/>
-        <SaleBadge sale={props.sale} />
-        
+        <div className={classes["heart"]}>
+          <HeartHoverButton on={heartHandler} wasLiked={wasLiked} />
         </div>
-        
+
+        <div className={classes["badges"]}>
+          <NewBadge new={props.new} />
+          <SaleBadge sale={props.sale} />
+        </div>
 
         <Link to={link}>
           <img

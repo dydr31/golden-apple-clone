@@ -8,7 +8,7 @@ export const Footer = () => {
     <>
       {/* <Resources/> */}
       <footer className={classes["footer"]}>
-        <ul>
+        <ul className={classes}>
           <li>how to find us</li>
           <li>contact us</li>
           <li>return policy</li>

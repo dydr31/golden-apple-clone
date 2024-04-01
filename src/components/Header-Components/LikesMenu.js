@@ -9,7 +9,7 @@ import { collection } from "firebase/firestore";
 import { db } from "../../config/firebase";
 import { getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { Item } from "../Item";
+import { Item } from "../item/Item";
 import { CartItem } from "./CartItem";
 
 export const LikesMenu = () => {

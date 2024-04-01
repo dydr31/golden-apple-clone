@@ -3,7 +3,7 @@ import classes from "./AccountSettings.module.css";
 import { auth } from "../../config/firebase";
 import { signOut } from "firebase/auth";
 import { ButtonBlack } from "../UI/ButtonBlack";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { headerActions } from "../../store";
 import { useState } from "react";
 import { cartActions } from "../../store/cartSlice";
@@ -13,6 +13,7 @@ import { Background } from "./UI/Background";
 
 export const AccountSettings = () => {
   const dispatch = useDispatch();
+  const loginSlice = useSelector(state => state.loginSlice)
 
   const [showLogOutMessage, setShowLogOutMessage] = useState(false);
 
@@ -40,6 +41,7 @@ export const AccountSettings = () => {
 
   return (
     <>
+    {console.log(loginSlice)}
       <Backdrop onClick={closeHandler} />
       <Background>
         <CloseIcon onClick={closeHandler} />

@@ -1,6 +1,6 @@
 import candle from "../pics/candle2.jpg";
 import classes from "./PopularItems.module.css";
-import { Item } from "./Item";
+import { Item } from "./item/Item";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
