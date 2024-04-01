@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Resources } from "./pages/Resources";
 import { ItemMenu } from "./pages/ItemPage";
 import { Home } from "./pages/Home";
-import { Catalogue } from "./pages/Catalogue0";
+import { Catalogue } from "./pages/Catalogue";
 import Header from "./components/Header";
 import { ErrorPage } from "./pages/ErrorPage";
 import { ItemsOnSale } from "./pages/ItemsOnSale";

@@ -50,7 +50,7 @@ export const LogInWithGoogle = (props) => {
         dispatch(cartActions.addUid(found[0].id));
         localStorage.setItem("uid", found[0].id);
         console.log(found[0].cart)
-        dispatch(cartActions.fillCart(found[0].cart))
+        dispatch(cartActions.replaceCart(found[0].cart))
         console.log("user found");
       }
     } catch (err) {

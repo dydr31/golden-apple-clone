@@ -19,11 +19,16 @@ export const fetchCartData = () => {
   return async (dispatch) => {
     const fetchData = async () => {
       let response = await getDoc(userRef);
+      console.log(response.data().cart)
       const data = response.data().cart;
       return data;
     };
 
     try {
+      console.log('a')
+      if(localStorage.getItem('uid') === undefined){
+        console.log('b')
+      }
       const cartData = await fetchData();
       dispatch(
         cartActions.replaceCart({

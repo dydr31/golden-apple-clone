@@ -50,9 +50,9 @@ function Header() {
   };
 
   useEffect(() => {
-    //if (isLoggedIn === true) {
+    if (isLoggedIn === true) {
       dispatch(fetchCartData());
-   // }
+  }
   }, [dispatch]);
 
   return (
